@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 /**
  * @author Javier Pérez Juan Raúl Simón Cristóbal Revelles
- * mas
+ * 
  */
 public class SplashScreen extends AppCompatActivity {
 
