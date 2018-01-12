@@ -5,10 +5,8 @@ import android.os.Bundle;
 
 /**
  * @author Javier Pérez Juan Raúl Simón Cristóbal Revelles
- * prueba1
- * 
  */
-public class SplashScreen1 extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
