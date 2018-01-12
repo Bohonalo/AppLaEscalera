@@ -8,7 +8,7 @@ import android.os.Bundle;
  * prueba1
  * 
  */
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
