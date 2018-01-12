@@ -4,7 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
- * @author 21639999 
+ * @author 21639999
+ * mas
  */
 public class SplashScreen extends AppCompatActivity {
 
