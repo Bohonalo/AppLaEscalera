@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AppLaEscalera</string>
+    <string name="title_activity_principal">Principal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="drawerterminos">Términos y condiciones</string>
+    <string name="drawerayuda">Ayuda</string>
+    <string name="drawerEscalera">Mi Escalera</string>
+    <string name="drawerCuenta">Mi Cuenta</string>
+    <string name="drawerMensaje">Mensajes</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Cuenta blank fragment</string>
 </resources>
