@@ -22,7 +22,8 @@
             android:layout_marginBottom="30dp"
             android:src="@mipmap/ic_launcher"
             android:contentDescription=""
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription"
+            />
 
 
         <EditText
