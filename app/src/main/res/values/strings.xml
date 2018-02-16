@@ -30,7 +30,7 @@
     <string name="hint_name">NombreCompleto</string>
     <string name="btn_login">Login</string>
     <string name="prompt_password">Por favor ingresa tu contraseña</string>
-    <string name="btn_link_to_register">No eres usuario? Registrate en Firebase ahora!</string>
+    <string name="btn_link_to_register">No eres usuario? Registrate ahora!</string>
     <string name="btn_link_to_login">Ya existe el usuario. Logeame!</string>
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
     <string name="btn_forgot_password">Olvidaste tu contraseña?</string>
