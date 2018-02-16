@@ -40,6 +40,10 @@
                 android:id="@+id/nav_ayuda"
                 android:title="@string/drawerayuda"
                 />
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Salir"
+            />
         </menu>
     </item>
 
