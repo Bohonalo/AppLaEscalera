@@ -17,4 +17,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="colorBoton">
+        <item name="android:background">#515fa5</item>
+        <item name="android:alpha">0.50</item>
+    </style>
+
 </resources>
