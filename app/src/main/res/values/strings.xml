@@ -12,8 +12,49 @@
     <string name="drawerCuenta">Mi Cuenta</string>
     <string name="drawerMensaje">Mensajes</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Cuenta blank fragment</string>
+
+    <string name="action_sign_in_short">Registro</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Contraseña incorrecta, introduce al menos 6 caracteres!</string>
+    <string name="auth_failed">Fallo de autentificación: comprueba tu email y contraseña o registrate!</string>
+    <string name="change_email">Cambiar Email</string>
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="send_password_reset_email">Enviar contraseña y resetear el email</string>
+    <string name="remove_user">Borrar usuario</string>
+    <string name="new_pass">Nueva contraseña</string>
+    <string name="title_activity_profile">Firebase</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_name">NombreCompleto</string>
+    <string name="btn_login">Login</string>
+    <string name="prompt_password">Por favor ingresa tu contraseña</string>
+    <string name="btn_link_to_register">No eres usuario? Registrate en Firebase ahora!</string>
+    <string name="btn_link_to_login">Ya existe el usuario. Logeame!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">Olvidaste tu contraseña?</string>
+    <string name="btn_reset_password">Resetea la contraseña</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">Nuevo Email</string>
+    <string name="btn_change">Cambia</string>
+    <string name="btn_send">Envia</string>
+    <string name="btn_remove">Borra</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="lbl_forgot_password">Olvidaste tu contraseña?</string>
+    <string name="forgot_password_msg">Te hemos enviado instrucciones para resetear tu contraseña!.</string>
+    <string name="email_id">Email ID</string>
+
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="textoUser">Username</string>
+    <string name="textoPsswd">Password</string>
+    <string name="txtBtn">Signup</string>
+    <string name="txtNOcuenta">Don´t have an account</string>
+    <string name="txtTITULO">la escalera</string>
+    <string name="txtSplash">la escaler</string>
+    <string name="txtSplash1">a</string>
+    <string name="txtSUBTITTLE">my first APP</string>
+    <string name="txtWelcome">welcome to ...</string>
     <string name="titulo1">Términos y Condiciones de Uso</string>
     <string name="titulo2">INFORMACIÓN RELEVANTE</string>
     <string name="textoTitulo">Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios, así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todos los productos que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña. El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos. La escalera no asume la responsabilidad en caso de que entregue dicha clave a terceros. Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.</string>
