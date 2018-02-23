@@ -25,13 +25,13 @@
 
         <ImageView
             android:layout_width="@dimen/logo_w_h"
-            android:rotation="90"
             android:layout_height="@dimen/logo_w_h"
             android:layout_below="@+id/progressBar"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="50dp"
             android:contentDescription=""
+            android:rotation="90"
             android:src="@drawable/logo"
             tools:ignore="ContentDescription" />
 
@@ -61,10 +61,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@drawable/boton_redondo"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:text="@string/btn_login"
-            android:textColor="@color/white" />
+            android:text="@string/btn_login" />
 
         <Button
             android:id="@+id/btn_reset_password"
