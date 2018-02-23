@@ -6,10 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.a21639999.applaescalera.SignupActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.65"
+        android:scaleType="centerCrop"
+        android:scaleY="-1"
+        android:src="@drawable/fondo4" />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/colorPrimaryDark"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
@@ -20,8 +29,9 @@
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="30dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/logo"
             android:contentDescription=""
+            android:rotation="90"
             tools:ignore="ContentDescription" />
 
 
@@ -50,14 +60,13 @@
 
 
         <Button
+            android:layout_marginTop="@dimen/Resource20dp"
             android:id="@+id/sign_up_button"
-            style="?android:textAppearanceSmall"
+            style="@style/colorBoton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/boton_redondo"
             android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
             android:textStyle="bold" />
 
         <Button
