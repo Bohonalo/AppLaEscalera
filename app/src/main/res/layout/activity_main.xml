@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.a21639999.applaescalera.MainActivity">
+    tools:context="com.app.JuanCristobalJavier.applaescalera.MainActivity">
 
     <EditText
         android:id="@+id/old_email"
