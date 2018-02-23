@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.a21639999.applaescalera"
+    package="com.app.JuanCristobalJavier.applaescalera"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.app.a21639999.applaescalera.SplashScreen"
+            android:name="com.app.JuanCristobalJavier.applaescalera.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,15 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.app.a21639999.applaescalera.Principal"
+            android:name="com.app.JuanCristobalJavier.applaescalera.Principal"
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.app.a21639999.applaescalera.MainActivity" />
-        <activity android:name="com.app.a21639999.applaescalera.LoginActivity"
+        <activity android:name="com.app.JuanCristobalJavier.applaescalera.MainActivity" />
+        <activity android:name="com.app.JuanCristobalJavier.applaescalera.LoginActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-        <activity android:name="com.app.a21639999.applaescalera.SignupActivity"
+        <activity android:name="com.app.JuanCristobalJavier.applaescalera.SignupActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-        <activity android:name="com.app.a21639999.applaescalera.ResetPasswordActivity"></activity>
+        <activity android:name="com.app.JuanCristobalJavier.applaescalera.ResetPasswordActivity"></activity>
     </application>
 
 </manifest>
