@@ -1,4 +1,4 @@
-package com.app.a21639999.applaescalera;
+package com.app.JuanCristobalJavier.applaescalera;
 
 import android.content.Intent;
 import android.graphics.Typeface;

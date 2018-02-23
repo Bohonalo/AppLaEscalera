@@ -1,4 +1,4 @@
-package com.app.a21639999.applaescalera;
+package com.app.JuanCristobalJavier.applaescalera;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;

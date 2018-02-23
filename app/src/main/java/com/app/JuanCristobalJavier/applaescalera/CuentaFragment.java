@@ -1,4 +1,4 @@
-package com.app.a21639999.applaescalera;
+package com.app.JuanCristobalJavier.applaescalera;
 
 
 import android.os.Bundle;
@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AyudaFragment extends Fragment {
-    View fragment;
+public class CuentaFragment extends Fragment {
 
-    public AyudaFragment() {
+
+    public CuentaFragment() {
         // Required empty public constructor
     }
 
@@ -23,8 +23,7 @@ public class AyudaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fragment = inflater.inflate(R.layout.fragment_ayuda, container, false);
-        return fragment;
+        return inflater.inflate(R.layout.fragment_cuenta, container, false);
     }
 
 }
