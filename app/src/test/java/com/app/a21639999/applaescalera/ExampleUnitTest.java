@@ -1,4 +1,4 @@
-package com.example.a21639999.applaescalera;
+package com.app.a21639999.applaescalera;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.a21639999.applaescalera;
+package com.app.a21639999.applaescalera;
 
 
 import android.os.Bundle;
@@ -11,20 +11,17 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AyudaFragment extends Fragment {
-    View fragment;
+public class TerminosFragment extends Fragment {
 
-    public AyudaFragment() {
-        // Required empty public constructor
+    public TerminosFragment() {
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        fragment = inflater.inflate(R.layout.fragment_ayuda, container, false);
-        return fragment;
-    }
 
+        return inflater.inflate(R.layout.fragment_terminos, container, false);
+    }
 }
