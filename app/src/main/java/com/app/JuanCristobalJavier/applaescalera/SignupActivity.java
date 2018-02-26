@@ -11,18 +11,22 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.app.JuanCristobalJavier.applaescalera.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
     private Button btnSignIn, btnSignUp, btnResetPassword;
-    private ProgressBar progressBar;
     private FirebaseAuth auth;
-
+    private DatabaseReference mDatabaseReference;
+    private Usuario usuario;
+    //private static String email = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +35,15 @@ public class SignupActivity extends AppCompatActivity {
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        btnSignIn = (Button) findViewById(R.id.sign_in_button);
-        btnSignUp = (Button) findViewById(R.id.sign_up_button);
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+        btnSignIn = findViewById(R.id.sign_in_button);
+        btnSignUp = findViewById(R.id.sign_up_button);
+        inputEmail = findViewById(R.id.email);
+        inputPassword = findViewById(R.id.password);
+        btnResetPassword = findViewById(R.id.btn_reset_password);
+        //String nombre = email.substring(0, email.indexOf("@"));
+
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
 
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +66,8 @@ public class SignupActivity extends AppCompatActivity {
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
+
+
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Introduce tu Email!", Toast.LENGTH_SHORT).show();
                     return;
@@ -74,14 +83,12 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Toast.makeText(SignupActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
@@ -89,19 +96,21 @@ public class SignupActivity extends AppCompatActivity {
                                     Toast.makeText(SignupActivity.this, "Fallo de autentificación." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+                                    String email = inputEmail.getText().toString().trim();
+                                    usuario = new Usuario("pepe", email);
+                                    mDatabaseReference.push().setValue(usuario);
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                     finish();
                                 }
                             }
                         });
-
             }
         });
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        progressBar.setVisibility(View.GONE);
     }
 }
