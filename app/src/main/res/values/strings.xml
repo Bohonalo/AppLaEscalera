@@ -12,8 +12,6 @@
     <string name="drawerCuenta">Mi Cuenta</string>
     <string name="drawerMensaje">Mensajes</string>
 
-    <string name="hello_blank_fragment">Cuenta blank fragment</string>
-
     <string name="action_sign_in_short">Registro</string>
     <string name="email">Email</string>
     <string name="minimum_password">Contraseña incorrecta, introduce al menos 6 caracteres!</string>
