@@ -1,10 +1,14 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +25,10 @@ public class Principal extends AppCompatActivity
     private FirebaseAuth auth;
     FloatingActionMenu actionMenu;
 
+    private TabLayout tabs;
+    private ViewPager vpPrincipal;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +60,22 @@ public class Principal extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        tabs = findViewById(R.id.tabs);
+        vpPrincipal = findViewById(R.id.vpPrincipal);
+
+        crearAdaptador();
+
+        tabs.setupWithViewPager(vpPrincipal);
+
+    }
+
+    private void crearAdaptador() {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Ofertas(), "Ofertas");
+        adapter.addFragment(new Demandas(), "Demandas");
+        vpPrincipal.setAdapter(adapter);
+
     }
 
     @Override

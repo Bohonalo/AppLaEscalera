@@ -1,4 +1,4 @@
-package com.example.a21639999.applaescalera;
+package com.app.JuanCristobalJavier.applaescalera;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

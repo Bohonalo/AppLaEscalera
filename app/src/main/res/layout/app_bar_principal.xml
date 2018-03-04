@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.app.JuanCristobalJavier.applaescalera.Principal">
 
+    <android.support.design.widget.TabLayout
+        android:layout_marginTop="55dp"
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+         />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
