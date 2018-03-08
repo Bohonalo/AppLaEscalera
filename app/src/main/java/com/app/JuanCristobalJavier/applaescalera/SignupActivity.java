@@ -19,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SignupActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
@@ -69,17 +72,26 @@ public class SignupActivity extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Introduce tu Email!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoEmailVacio), Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if(!validaEmail(email)){
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoMailInvalido), Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Introduce contraseña!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoPasswordInvalido), Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Contraseña incorrecta, introduce al menos 6 caracteres!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            minimum_password), Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -88,13 +100,14 @@ public class SignupActivity extends AppCompatActivity {
                         .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(SignupActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
+                                Toast.makeText(SignupActivity.this,
+                                        getResources().getString(R.string.toastUsuarioRegistrado)
+                                                + task.isSuccessful(), Toast.LENGTH_LONG).show();
+
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(SignupActivity.this, "Fallo de autentificación." + task.getException(),
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignupActivity.this,
+                                            getResources().getString(R.string.toastErrorCreacionUsuario)
+                                                    + task.isSuccessful(), Toast.LENGTH_LONG).show();
                                 } else {
                                     String email = inputEmail.getText().toString().trim();
                                     usuario = new Usuario("pepe", email);
@@ -107,6 +120,12 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static Boolean validaEmail (String email) {
+        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     @Override
