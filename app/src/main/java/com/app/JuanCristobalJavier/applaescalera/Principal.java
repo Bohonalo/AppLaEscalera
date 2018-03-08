@@ -12,14 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.app.JuanCristobalJavier.applaescalera.model.ChatActivity;
+import com.app.JuanCristobalJavier.applaescalera.model.MisCosas;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Principal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth auth;
-    FloatingActionMenu actionMenu;
+    private FloatingActionMenu actionMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,9 @@ public class Principal extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_escalera) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
+            // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
+            Intent intent = new Intent(this, MisCosasActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
         } else if (id == R.id.nav_terminos) {
@@ -106,6 +109,9 @@ public class Principal extends AppCompatActivity
 
         } else if (id == R.id.nav_logout){
             signOut();
+        } else if (id == R.id.nav_mensaje){
+            Intent intent = new Intent(this, ChatActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -117,7 +123,7 @@ public class Principal extends AppCompatActivity
         auth.signOut();
 
         startActivity(new Intent(Principal.this, LoginActivity.class));
-         finish();
+        finish();
 
 // this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
