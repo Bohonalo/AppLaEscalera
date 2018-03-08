@@ -51,4 +51,15 @@
         android:layout_below="@+id/txNombre"
         android:text="Comparto este magnífico taladro el cual apenas doy uso. Al igual que comparto, espero que los usuarios compartan otros productos. Si estas interesado ponte en contacto conmigo a través del chat. Vivo en la comunidad de la Estación en el portal 5 - 2A. "
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/idBtnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:onClick="volver"
+        android:text="Volver"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 </RelativeLayout>

@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.app.JuanCristobalJavier.applaescalera.model.ItemActivity;
+
 /**
  * @author Javier Pérez Juan Raúl Simón Cristóbal Revelles
  */
@@ -80,7 +82,7 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreen.this, ItemActivity.class);
                 startActivity(intent);
                 finish();
             }
