@@ -103,10 +103,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new TerminosFragment()).commit();
         } else if (id == R.id.nav_ayuda) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new AyudaFragment()).commit();
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         } else if (id == R.id.nav_logout){
             signOut();
         } else if (id == R.id.nav_mensaje){
