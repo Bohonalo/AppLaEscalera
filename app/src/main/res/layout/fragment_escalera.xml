@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.JuanCristobalJavier.applaescalera.EscaleraFragment">
+    tools:context="com.projectApp.JuanCristobalJavier.applaescalera.project.app.JuanCristobalJavier.applaescalera.EscaleraFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/idRVmisCosas"

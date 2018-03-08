@@ -11,7 +11,7 @@ android {
     }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.a21639999.applaescalera"
+        applicationId "com.projectApp.a21639999.applaescalera"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1

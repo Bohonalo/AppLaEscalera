@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context="com.app.JuanCristobalJavier.applaescalera.AyudaFragment">
+    tools:context="com.projectApp.JuanCristobalJavier.applaescalera.project.app.JuanCristobalJavier.applaescalera.AyudaFragment">
 
 
     <ImageView

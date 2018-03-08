@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.JuanCristobalJavier.applaescalera"
+    package="com.projectApp.JuanCristobalJavier.applaescalera"
     android:versionCode="1"
     android:versionName="1.0">
     <uses-sdk android:minSdkVersion="21" />
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name="com.projectApp.JuanCristobalJavier.applaescalera.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,20 +22,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Principal"
+            android:name="com.projectApp.JuanCristobalJavier.applaescalera.Principal"
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.projectApp.JuanCristobalJavier.applaescalera.MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.projectApp.JuanCristobalJavier.applaescalera.LoginActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".SignupActivity"
+            android:name="com.projectApp.JuanCristobalJavier.applaescalera.SignupActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".MisCosasActivity"
+        <activity android:name="com.projectApp.JuanCristobalJavier.applaescalera.ResetPasswordActivity" />
+        <activity android:name="com.projectApp.JuanCristobalJavier.applaescalera.MisCosasActivity"
             />
-        <activity android:name=".model.ChatActivity"></activity>
+        <activity android:name="com.projectApp.JuanCristobalJavier.applaescalera.model.ChatActivity"></activity>
     </application>
 
 </manifest>
