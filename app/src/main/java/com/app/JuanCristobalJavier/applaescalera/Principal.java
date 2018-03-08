@@ -43,8 +43,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             }
         });*/
 
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -94,9 +92,9 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         int id = item.getItemId();
 
         if (id == R.id.nav_escalera) {
-            // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
-            Intent intent = new Intent(this, MisCosasActivity.class);
-            startActivity(intent);
+            getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
+            //Intent intent = new Intent(this, MisCosasActivity.class);
+            //startActivity(intent);
         } else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
         } else if (id == R.id.nav_terminos) {

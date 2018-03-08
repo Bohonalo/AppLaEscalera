@@ -29,8 +29,12 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MiViewHolder> impl
             this.misCosas = misCosas;
         }
 
+    public Adaptador(ArrayList lista) {
+        this.misCosas = lista;
+    }
 
-        public static class MiViewHolder extends RecyclerView.ViewHolder {
+
+    public static class MiViewHolder extends RecyclerView.ViewHolder {
             private ImageView imagen;
             private TextView textoSup;
             private TextView textoInf;
