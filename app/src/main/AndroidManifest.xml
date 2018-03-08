@@ -32,7 +32,8 @@
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".MisCosasActivity" />
+        <activity android:name=".MisCosasActivity"
+            />
         <activity android:name=".model.ChatActivity"></activity>
     </application>
 

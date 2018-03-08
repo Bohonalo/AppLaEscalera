@@ -48,11 +48,19 @@ public class MisCosasActivity extends AppCompatActivity {
                 " y vuelvo a las 5. Zona metro Begoña", R.drawable.coche);
         MisCosas d2 = new MisCosas("Comparto Taladro", "Talabro 600W", R.drawable.taladro);
         MisCosas d3 = new MisCosas("Paseo Perro", "Puedo sacar tu perro a las 7 de la mañana...", R.drawable.perro);
+        MisCosas d4 = new MisCosas("Impresora", "Hola, apenas uso la impresora y es una pena. Si necesitas imprimir algo, estoy disponible.", R.drawable.impresora);
+        MisCosas d5 = new MisCosas("Senderismo", "Me gusta pasear y hacer senderismo por la montaña. Suelo salir a la pedriza todos los Domingos.",  R.drawable.paseo);
+        MisCosas d6 = new MisCosas("Un buen café", "Hola, tengo la mayoria de las tardes libres y a veces pienso que es una pena no compartir una buena taza de café. ", R.drawable.cafe);
+        MisCosas d7 = new MisCosas("Busco canguro", "Hola soy Carolina, busco alguien de confianza en el barrio/urbanización que cuide de mi bebe.", R.drawable.carolina);
+
+
         lista.add(d1);
         lista.add(d2);
         lista.add(d3);
-
-
+        lista.add(d4);
+        lista.add(d5);
+        lista.add(d6);
+        lista.add(d7);
 
     }
 }
