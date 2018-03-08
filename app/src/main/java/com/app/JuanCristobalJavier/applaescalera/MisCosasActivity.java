@@ -1,12 +1,15 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.app.JuanCristobalJavier.applaescalera.model.ItemActivity;
 import com.app.JuanCristobalJavier.applaescalera.model.MisCosas;
 import com.app.JuanCristobalJavier.applaescalera.recyclerViewUtils.Adaptador;
 
@@ -37,10 +40,22 @@ public class MisCosasActivity extends AppCompatActivity {
 
         lista = new ArrayList<MisCosas>();
 
-        Adaptador adap = new Adaptador(this,R.layout.item_miscosas, lista);
+        final Adaptador adap = new Adaptador(this,R.layout.item_miscosas, lista);
         rv.setAdapter(adap);
 
         cargarDatos();
+        adap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Cd cd = listaCd.get(rv.getChildAdapterPosition(v));
+                MisCosas it = (MisCosas) lista.get(rv.getChildAdapterPosition(v));
+                Intent intent = new Intent(MisCosasActivity.this, ItemActivity.class);
+                intent.putExtra("nombre", it.getNombre());
+                intent.putExtra("texto", it.getDescripcion());
+                intent.putExtra("imagen", it.getImagen());
+                startActivity(intent);
+            }
+        });
     }
 
     private void cargarDatos() {

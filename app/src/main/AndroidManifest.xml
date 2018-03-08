@@ -32,9 +32,9 @@
             android:name=".SignupActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".MisCosasActivity"
-            />
-        <activity android:name=".model.ChatActivity"></activity>
+        <activity android:name=".MisCosasActivity" />
+        <activity android:name=".model.ChatActivity" />
+        <activity android:name=".model.ItemActivity"></activity>
     </application>
 
 </manifest>
