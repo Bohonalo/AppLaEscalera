@@ -18,14 +18,14 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/pablo" />
+            android:src="@drawable/mujer4" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pablo Iglesias"
+            android:text="Elena Suarez"
             android:textSize="34sp"
             android:textStyle="bold" />
 

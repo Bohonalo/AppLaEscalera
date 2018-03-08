@@ -47,14 +47,15 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void cargarDatos() {
-        Chat c1 = new Chat("Iñigo Errejon", "Pablo qué tal, estoy buscando un taladro para el fin de semana...", R.drawable.errejon);
-        Chat c2 = new Chat("Irene Montero", "Hola Pablete cómo estas hoy..., necesito que pasees a mi perrita. Ya me dices luego guapo", R.drawable.irene);
-        Chat c3 = new Chat("Esperanza Aguirre", "Pablo chatin, que no contestas a mis mensajes...", R.drawable.esperanza);
-        Chat c4 = new Chat("Irene Arrimadas", "Buenos días, el taladro que Usted me dejó estaba roto, la cosa del centro (me parece que se llama broca) daba vueltas muy deprisa", R.drawable.ines);
-
+        Chat c1 = new Chat("Juan Sanchez", "Pablo qué tal, estoy buscando un taladro para el fin de semana...", R.drawable.hombre1);
+        Chat c2 = new Chat("Irene Ruiz", "Hola Pablete cómo estas hoy..., necesito que pasees a Laika. Ya me dices luego guapo", R.drawable.mujer1);
+        Chat c3 = new Chat("Esperanza Sanz", "Pablo chatin, que no contestas a mis mensajes...", R.drawable.mujer2);
+        Chat c4 = new Chat("Ana Perez", "Buenos días, el taladro que Usted me dejó estaba roto, la cosa del centro (me parece que se llama broca) daba vueltas muy deprisa", R.drawable.mujer3);
+        Chat c5 = new Chat("Arturo y Luisa", "Hola!! buscamos alguien para compartir gastos con la conexión de internet", R.drawable.pareja);
         lista.add(c1);
         lista.add(c2);
         lista.add(c3);
         lista.add(c4);
+        lista.add(c5);
     }
 }
