@@ -68,4 +68,5 @@
     <string name="textoFraude">La compra del cliente o uso del cliente, puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.</string>
     <string name="privacidad">PRIVACIDAD</string>
     <string name="textoPrivacidad">En La escalera garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales. La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta. La escalera reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</string>
+    <string name="prueba">TextView</string>
 </resources>
