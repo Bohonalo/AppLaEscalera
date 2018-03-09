@@ -67,6 +67,7 @@ public class MisCosasActivity extends AppCompatActivity {
         MisCosas d5 = new MisCosas("Senderismo", "Me gusta pasear y hacer senderismo por la montaña. Suelo salir a la pedriza todos los Domingos.",  R.drawable.paseo);
         MisCosas d6 = new MisCosas("Un buen café", "Hola, tengo la mayoria de las tardes libres y a veces pienso que es una pena no compartir una buena taza de café. ", R.drawable.cafe);
         MisCosas d7 = new MisCosas("Busco canguro", "Hola soy Carolina, busco alguien de confianza en el barrio/urbanización que cuide de mi bebe.", R.drawable.mujer3);
+        MisCosas d8 = new MisCosas("¿Alguien para cuidar mis peces?", "Soy la vecina del atico del portal 2, estoy buscando una persona que pueda echar de comer a mis peces en periodo vacacional", R.drawable.pecera);
 
 
         lista.add(d1);
@@ -76,6 +77,7 @@ public class MisCosasActivity extends AppCompatActivity {
         lista.add(d5);
         lista.add(d6);
         lista.add(d7);
+        lista.add(d8);
 
     }
 }

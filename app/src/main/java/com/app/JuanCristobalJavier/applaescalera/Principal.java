@@ -43,7 +43,8 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             }
         });*/
 
-
+        Intent intent = new Intent(this, MisCosasActivity.class);
+        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

@@ -52,10 +52,15 @@ public class ChatActivity extends AppCompatActivity {
         Chat c3 = new Chat("Esperanza Sanz", "Pablo chatin, que no contestas a mis mensajes...", R.drawable.mujer2);
         Chat c4 = new Chat("Ana Perez", "Buenos días, el taladro que Usted me dejó estaba roto, la cosa del centro (me parece que se llama broca) daba vueltas muy deprisa", R.drawable.mujer3);
         Chat c5 = new Chat("Arturo y Luisa", "Hola!! buscamos alguien para compartir gastos con la conexión de internet", R.drawable.pareja);
+        Chat c6 = new Chat("Ricardo Lopez", "Qué hay, estoy buscando alguien que tenga tiempo para colgar una lampara, soy vecino de La Estación del portal 7", R.drawable.hombre2);
+        Chat c7 = new Chat("Arturo Jaen", "Hola estoy buscando alguien que pueda cuidar de mis peces en semana santa....", R.drawable.hombre3);
+
         lista.add(c1);
         lista.add(c2);
         lista.add(c3);
         lista.add(c4);
         lista.add(c5);
+        lista.add(c6);
+        lista.add(c7);
     }
 }
