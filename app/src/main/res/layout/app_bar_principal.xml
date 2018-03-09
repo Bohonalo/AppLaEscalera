@@ -41,7 +41,8 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:fab_label="Oferta"
-            android:src="@drawable/googleg_standard_color_18"/>
+            android:src="@drawable/googleg_standard_color_18"
+            android:onClick="guardarOferta"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_height="match_parent"
