@@ -34,14 +34,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         auth = FirebaseAuth.getInstance();
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
 
         Intent intent = new Intent(this, MisCosasActivity.class);
         startActivity(intent);
