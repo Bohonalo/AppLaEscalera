@@ -35,7 +35,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         auth = FirebaseAuth.getInstance();
 
 
-
         Intent intent = new Intent(this, MisCosasActivity.class);
         startActivity(intent);
 
