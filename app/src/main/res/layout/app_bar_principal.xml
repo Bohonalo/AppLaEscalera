@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="com.app.JuanCristobalJavier.applaescalera.Principal">
 
     <android.support.design.widget.TabLayout
@@ -26,6 +27,7 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         android:orientation="vertical">
 
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -39,7 +41,6 @@
             />
 
     </LinearLayout>
-
 
 
     <com.github.clans.fab.FloatingActionMenu
@@ -65,3 +66,4 @@
     </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>
+    <!--android:background="@drawable/fotourba"-->

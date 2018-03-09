@@ -14,6 +14,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ResetPasswordActivity extends AppCompatActivity {
 
     private EditText inputEmail;
@@ -49,6 +52,10 @@ public class ResetPasswordActivity extends AppCompatActivity {
                     Toast.makeText(getApplication(), "Ingresa tu email registrado.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (!validaEmail(email)) {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoMailInvalido), Toast.LENGTH_LONG).show();
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
                 auth.sendPasswordResetEmail(email)
@@ -66,6 +73,15 @@ public class ResetPasswordActivity extends AppCompatActivity {
                         });
             }
         });
+
     }
 
+    public static Boolean validaEmail(String email) {
+        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+
 }
+
