@@ -1,69 +1,143 @@
 <resources>
     <string name="app_name">AppLaEscalera</string>
+
     <string name="title_activity_principal">Principal</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
+
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
     <string name="drawerterminos">Términos y condiciones</string>
+
     <string name="drawerayuda">Ayuda</string>
+
     <string name="drawerEscalera">Mi Escalera</string>
+
     <string name="drawerCuenta">Mi Cuenta</string>
+
     <string name="drawerMensaje">Mensajes</string>
 
     <string name="action_sign_in_short">Registro</string>
+
     <string name="email">Email</string>
-    <string name="minimum_password">Contraseña incorrecta, introduce al menos 6 caracteres!</string>
-    <string name="auth_failed">Fallo de autentificación: comprueba tu email y contraseña o registrate!</string>
+
+    <string name="minimum_password">La constraseña debe contener MINIMO 6 caracteres</string>
+
+    <string name="auth_failed">Fallo de autentificación: compruebe el email/contraseña</string>
+
     <string name="change_email">Cambiar Email</string>
+
     <string name="change_password">Cambiar Contraseña</string>
+
     <string name="send_password_reset_email">Enviar contraseña y resetear el email</string>
+
     <string name="remove_user">Borrar usuario</string>
+
     <string name="new_pass">Nueva contraseña</string>
+
     <string name="title_activity_profile">Firebase</string>
+
     <string name="title_activity_login">Sign in</string>
+
     <string name="hint_email">Email</string>
+
     <string name="hint_password">Contraseña</string>
+
     <string name="hint_name">NombreCompleto</string>
+
     <string name="btn_login">Login</string>
+
     <string name="prompt_password">Por favor ingresa tu contraseña</string>
-    <string name="btn_link_to_register">No eres usuario? Registrate ahora!</string>
-    <string name="btn_link_to_login">Ya existe el usuario. Logeame!</string>
+
+    <string name="btn_link_to_register">Nuevo usuario</string>
+
+    <string name="btn_link_to_login">Ya hay un usuario registrado con los datos introducidos</string>
+
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
+
     <string name="btn_forgot_password">Olvidaste tu contraseña?</string>
-    <string name="btn_reset_password">Resetea la contraseña</string>
-    <string name="btn_back"><![CDATA[<< Back]]></string>
+
+    <string name="btn_reset_password">Regenerar contraseña</string>
+
+
+    -
+    <string name="btn_back">
+
+<![CDATA[<< Back]]>
+
+</string>
+
     <string name="hint_new_email">Nuevo Email</string>
+
     <string name="btn_change">Cambia</string>
+
     <string name="btn_send">Envia</string>
+
     <string name="btn_remove">Borra</string>
+
     <string name="btn_sign_out">Sign Out</string>
+
     <string name="lbl_forgot_password">Olvidaste tu contraseña?</string>
-    <string name="forgot_password_msg">Te hemos enviado instrucciones para resetear tu contraseña!.</string>
+
+    <string name="forgot_password_msg">Hemos enviado al email registrado instrucciones para resetear la contraseña!.</string>
+
     <string name="email_id">Email ID</string>
 
+    <string name="campoEmailVacio">Introduce el email con el que se registró</string>
+
+    <string name="campoMailInvalido">Introduce un email válido</string>
+
+    <string name="campoPasswordInvalido">Introduce contraseña</string>
+
+    <string name="toastUsuarioRegistrado">Usuario registrado correctamente</string>
+
+    <string name="toastErrorCreacionUsuario">Error en el registro, contacte con el administrador</string>
+
     <string name="section_format">Hello World from section: %1$d</string>
+
     <string name="textoUser">Username</string>
+
     <string name="textoPsswd">Password</string>
+
     <string name="txtBtn">Signup</string>
+
     <string name="txtNOcuenta">Don´t have an account</string>
+
     <string name="txtTITULO">la escalera</string>
+
     <string name="txtSplash">la escaler</string>
+
     <string name="txtSplash1">a</string>
+
     <string name="txtSUBTITTLE">my first APP</string>
+
     <string name="txtWelcome">welcome to ...</string>
+
     <string name="titulo1">Términos y Condiciones de Uso</string>
+
     <string name="titulo2">INFORMACIÓN RELEVANTE</string>
+
     <string name="textoTitulo">Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios, así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todos los productos que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña. El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos. La escalera no asume la responsabilidad en caso de que entregue dicha clave a terceros. Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.</string>
+
     <string name="licencia">LICENCIA</string>
+
     <string name="textoLicencia">La escalera concede una licencia para que los usuarios utilicen los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.</string>
+
     <string name="noAutorizado">USO NO AUTORIZADO</string>
+
     <string name="textoNoAutorizado">En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.</string>
+
     <string name="propiedad">PROPIEDAD</string>
+
     <string name="textoPropiedad">Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será responsable de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.</string>
+
     <string name="antifraude">COMPROBACIÓN ANTIFRAUDE</string>
+
     <string name="textoFraude">La compra del cliente o uso del cliente, puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.</string>
+
     <string name="privacidad">PRIVACIDAD</string>
+
     <string name="textoPrivacidad">En La escalera garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales. La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta. La escalera reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</string>
 </resources>

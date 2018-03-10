@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.app.JuanCristobalJavier.applaescalera.model.ItemActivity;
+
 /**
  * @author Javier Pérez Juan Raúl Simón Cristóbal Revelles
  */
@@ -84,6 +86,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 5000);
+        }, 3000);
     }
 }

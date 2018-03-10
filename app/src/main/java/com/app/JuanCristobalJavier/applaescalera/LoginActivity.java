@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
@@ -66,12 +69,20 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = inputPassword.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Inserta tu Email!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoEmailVacio), Toast.LENGTH_LONG).show();
                     return;
                 }
 
+               if(!validaEmail(email)){
+                   Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                           campoMailInvalido), Toast.LENGTH_LONG).show();
+               }
+
+
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Inserta tu contraseña!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.
+                            campoPasswordInvalido), Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -88,7 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                                     if (password.length() < 6) {
                                         inputPassword.setError(getString(R.string.minimum_password));
                                     } else {
-                                        Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this, getString(R.string
+                                                .auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -100,4 +112,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    public static Boolean validaEmail (String email) {
+        Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
 }
