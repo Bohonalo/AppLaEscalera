@@ -55,24 +55,15 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-       iniciarNavigationView();
-
-
-    }
-
-    private void iniciarNavigationView() {
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         tabs = findViewById(R.id.tabs);
         vpPrincipal = findViewById(R.id.vpPrincipal);
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Ofertas(), "Ofertas");
-        adapter.addFragment(new Demandas(), "Demandas");
-        vpPrincipal.setAdapter(adapter);
 
-        tabs.setupWithViewPager(vpPrincipal);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+
     }
 
     @Override
@@ -122,21 +113,12 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             startActivity(intent);
         } else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
-            vpPrincipal.setVisibility(View.INVISIBLE);
-            navigationView.setVisibility(View.INVISIBLE);
-            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_terminos) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new TerminosFragment()).commit();
-            vpPrincipal.setVisibility(View.INVISIBLE);
-            navigationView.setVisibility(View.INVISIBLE);
-            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_ayuda) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new AyudaFragment()).commit();
-            vpPrincipal.setVisibility(View.INVISIBLE);
-            navigationView.setVisibility(View.INVISIBLE);
-            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_logout){
             signOut();
