@@ -2,11 +2,11 @@ package com.app.JuanCristobalJavier.applaescalera;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -18,17 +18,21 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.app.JuanCristobalJavier.applaescalera.model.ChatActivity;
-import com.app.JuanCristobalJavier.applaescalera.model.MisCosas;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        ContenedorFragment.OnFragmentInteractionListener {
     private FirebaseAuth auth;
     private FloatingActionMenu actionMenu;
 
     private TabLayout tabs;
     private ViewPager vpPrincipal;
+
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+    private ViewPagerAdapter adapter;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -45,33 +49,30 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         auth = FirebaseAuth.getInstance();
 
 
-        Intent intent = new Intent(this, MisCosasActivity.class);
-        startActivity(intent);
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+       iniciarNavigationView();
+
+
+    }
+
+    private void iniciarNavigationView() {
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         tabs = findViewById(R.id.tabs);
         vpPrincipal = findViewById(R.id.vpPrincipal);
 
-        crearAdaptador();
-
-        tabs.setupWithViewPager(vpPrincipal);
-
-    }
-
-    private void crearAdaptador() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Ofertas(), "Ofertas");
         adapter.addFragment(new Demandas(), "Demandas");
         vpPrincipal.setAdapter(adapter);
 
+        tabs.setupWithViewPager(vpPrincipal);
     }
 
     @Override
@@ -112,18 +113,30 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if (id == R.id.nav_Principal) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+        }
         if (id == R.id.nav_escalera) {
             // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
             Intent intent = new Intent(this, MisCosasActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
+            vpPrincipal.setVisibility(View.INVISIBLE);
+            navigationView.setVisibility(View.INVISIBLE);
+            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_terminos) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new TerminosFragment()).commit();
+            vpPrincipal.setVisibility(View.INVISIBLE);
+            navigationView.setVisibility(View.INVISIBLE);
+            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_ayuda) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new AyudaFragment()).commit();
+            vpPrincipal.setVisibility(View.INVISIBLE);
+            navigationView.setVisibility(View.INVISIBLE);
+            tabs.setVisibility(View.INVISIBLE);
             actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_logout){
             signOut();
@@ -159,5 +172,10 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     }
 
     public void guardarOferta(View view) {
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
