@@ -98,8 +98,6 @@ public class ContenedorFragment extends Fragment {
         adapter.addFragment(new Ofertas(),"OFERTA");
         adapter.addFragment(new Demandas(),"DEMANDA");
 
-
-
         viewPager.setAdapter(adapter);
     }
 

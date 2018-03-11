@@ -3,21 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.app.JuanCristobalJavier.applaescalera.Principal">
-
-    <android.support.design.widget.TabLayout
-        android:layout_marginTop="55dp"
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabGravity="center"
-         />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vpPrincipal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         />
 
     <android.support.design.widget.AppBarLayout
@@ -30,17 +22,16 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+        <FrameLayout
+            android:id="@+id/frament"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <FrameLayout
-        android:id="@+id/frament"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    </android.support.design.widget.AppBarLayout>
 
 
     <com.github.clans.fab.FloatingActionMenu
@@ -62,7 +53,8 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:fab_label="Demanda"
-            android:src="@drawable/googleg_standard_color_18"/>
+            android:src="@drawable/googleg_standard_color_18"
+            android:onClick="guardarDemanda"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 

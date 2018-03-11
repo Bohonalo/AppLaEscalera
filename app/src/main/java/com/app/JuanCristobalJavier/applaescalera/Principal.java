@@ -27,8 +27,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     private FirebaseAuth auth;
     private FloatingActionMenu actionMenu;
 
-    private TabLayout tabs;
-    private ViewPager vpPrincipal;
+   // private ViewPager vpPrincipal;
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
@@ -42,6 +41,14 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        cargarContenido(toolbar);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+        actionMenu.setVisibility(View.VISIBLE);
+
+    }
+
+    private void cargarContenido(Toolbar toolbar) {
         actionMenu = findViewById(R.id.floatinMenu);
         actionMenu.setClosedOnTouchOutside(true);
         actionMenu.setVisibility(View.INVISIBLE);
@@ -57,13 +64,9 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        tabs = findViewById(R.id.tabs);
-        vpPrincipal = findViewById(R.id.vpPrincipal);
+        //vpPrincipal = findViewById(R.id.vpPrincipal);
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
-
     }
 
     @Override
@@ -154,10 +157,17 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     }
 
     public void guardarOferta(View view) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new GuardarOferta()).commit();
+        actionMenu.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void guardarDemanda(View view) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new GuardarDemanda()).commit();
+        actionMenu.setVisibility(View.INVISIBLE);
     }
 }

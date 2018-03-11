@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,8 +48,12 @@ public class Ofertas extends Fragment {
         View v = inflater.inflate(R.layout.fragment_ofertas, container, false);
         lista = new ArrayList<Oferta>();
         recyclerView = v.findViewById(R.id.rvOfertas);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         cargarDatos();
+
+        AdaptadorOD adapter = new AdaptadorOD(lista);
+        recyclerView.setAdapter(adapter);
         //configurarRV();
 
 
