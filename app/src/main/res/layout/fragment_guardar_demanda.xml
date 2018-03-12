@@ -21,18 +21,26 @@
         android:padding="@dimen/Resource15dp"
         android:layout_marginTop="50dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Necesito:"
+            android:textSize="25dp"
+            android:gravity="center"/>
+
         <EditText
             android:id="@+id/edtNombreDemanda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Nombre del producto"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_marginTop="25dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,7 +60,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
 
             <Button
                 android:id="@+id/btnGuardarDemanda"

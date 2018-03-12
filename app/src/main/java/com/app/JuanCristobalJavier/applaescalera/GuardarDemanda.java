@@ -49,15 +49,22 @@ public class GuardarDemanda extends Fragment {
 
         fr = FirebaseDatabase.getInstance();
 
-        nombre = v.findViewById(R.id.edtNombreOferta);
-        descrip = v.findViewById(R.id.edtDescripOferta);
-        btnGuardar = v.findViewById(R.id.btnGuardarOferta);
+        nombre = v.findViewById(R.id.edtNombreDemanda);
+        descrip = v.findViewById(R.id.edtDescripDemanda);
+        btnGuardar = v.findViewById(R.id.btnGuardarDemanda);
         u = new Usuario();
 
         email = obterEmail();
 
         obterNombre();
-        
+
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                guardarObjetoRealtime(email, nombreU);
+            }
+        });
 
         return v;
     }
@@ -94,7 +101,7 @@ public class GuardarDemanda extends Fragment {
     }
 
     private void guardarObjetoRealtime(String emailP, String nombrePer) {
-        dr = FirebaseDatabase.getInstance().getReference().child("ObjetosOferta");
+        dr = FirebaseDatabase.getInstance().getReference().child("ObjetosDemanda");
 
         String descripO = descrip.getText().toString();
         String nombreP = nombre.getText().toString();

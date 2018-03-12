@@ -7,14 +7,17 @@ package com.app.JuanCristobalJavier.applaescalera.model;
 public class Demanda {
     String nombre;
     String des;
-    boolean disponible;
     String nombreUsuario;
+    String email;
 
-    public Demanda(String nombre, String des, boolean disponible, String nombreUsuario) {
+    public Demanda(String nombre, String des, String nombreUsuario, String email) {
         this.nombre = nombre;
         this.des = des;
-        this.disponible = disponible;
+        this.email = email;
         this.nombreUsuario = nombreUsuario;
+    }
+
+    public Demanda() {
     }
 
     public void setNombre(String nombre) {
@@ -23,10 +26,6 @@ public class Demanda {
 
     public void setDes(String des) {
         this.des = des;
-    }
-
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
     }
 
     public void setNombreUsuario(String nombreUsuario) {
@@ -41,11 +40,15 @@ public class Demanda {
         return des;
     }
 
-    public boolean isDisponible() {
-        return disponible;
-    }
-
     public String getNombreUsuario() {
         return nombreUsuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
