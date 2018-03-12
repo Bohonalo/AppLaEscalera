@@ -20,14 +20,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/Resource15dp"
-        android:layout_marginTop="40dp">
-
-        <EditText
-            android:id="@+id/edtNombrePersonaOferta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Introduce tu nombre" />
+        android:layout_marginTop="50dp">
 
         <EditText
             android:id="@+id/edtNombreOferta"

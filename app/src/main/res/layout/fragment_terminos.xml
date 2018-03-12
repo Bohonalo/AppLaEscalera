@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.app.JuanCristobalJavier.applaescalera.TerminosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:padding="@dimen/paddinTerminos"

@@ -1,6 +1,7 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -13,10 +14,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.JuanCristobalJavier.applaescalera.model.Oferta;
+import com.app.JuanCristobalJavier.applaescalera.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,9 +42,12 @@ public class GuardarOferta extends Fragment {
     private FirebaseFirestore db;
     private EditText nombre;
     private EditText descrip;
-    private EditText nombreP;
     private Button btnGuardar;
     private DatabaseReference mDatabaseReference;
+    private Usuario u;
+    private String nombreU;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     public GuardarOferta() {
         // Required empty public constructor
@@ -57,27 +64,64 @@ public class GuardarOferta extends Fragment {
         nombre = v.findViewById(R.id.edtNombreOferta);
         descrip = v.findViewById(R.id.edtDescripOferta);
         btnGuardar = v.findViewById(R.id.btnGuardarOferta);
-        nombreP = v.findViewById(R.id.edtNombrePersonaOferta);
+        u = new Usuario();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference("Usuarios");
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                guardarObjetoRealtime();
+                String email = obterEmail();
+
+                String nombrePersona = obterNombre(email);
+
+                guardarObjetoRealtime(email, nombrePersona);
+
             }
         });
 
         return v;
     }
 
-    private void guardarObjetoRealtime() {
+    private String obterNombre(final String email) {
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    u = dataSnapshot1.getValue(Usuario.class);
+                    System.out.print(u.getNombre());
+/*                    if (u.getEmail().equalsIgnoreCase(email)){
+                       nombreU =  u.getNombre();
+                    }*/
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return nombreU;
+    }
+
+    private String obterEmail() {
+        String email = "";
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            email = user.getEmail();
+        }
+        return  email;
+    }
+
+    private void guardarObjetoRealtime(String emailP, String nombrePer) {
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("ObjetosOferta");
 
-        String nombreO = nombre.getText().toString();
         String descripO = descrip.getText().toString();
-        String nombrePer = nombreP.getText().toString();
+        String nombreP = nombre.getText().toString();
 
-        Oferta o = new Oferta(nombreO, descripO, nombrePer);
+        Oferta o = new Oferta(nombreP, descripO, nombrePer, emailP);
         mDatabaseReference.push().setValue(o);
 
         ContenedorFragment nuevoFragmento = new ContenedorFragment();
@@ -92,13 +136,12 @@ public class GuardarOferta extends Fragment {
     private void guardarObjetosCloud() {
         String nombreO = nombre.getText().toString();
         String descripO = descrip.getText().toString();
-        String nombrePer = nombreP.getText().toString();
 
         // Create a new user with a first and last name
         Map<String, Object> ObjetosOfera = new HashMap<>();
 
 
-        ObjetosOfera.put("NombrePersona", nombrePer);
+        //ObjetosOfera.put("NombrePersona", nombrePer);
         ObjetosOfera.put("NombreObjeto", nombreO);
         ObjetosOfera.put("Descripcion", descripO);
 

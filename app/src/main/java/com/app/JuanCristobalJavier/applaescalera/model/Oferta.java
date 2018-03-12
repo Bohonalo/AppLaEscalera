@@ -9,11 +9,16 @@ public class Oferta {
     String nombre;
     String des;
     String nombreUsuario;
+    String email;
 
-    public Oferta(String nombre, String des, String nombreUsuario) {
+    public Oferta(String nombre, String des, String nombreUsuario, String email) {
         this.nombre = nombre;
         this.des = des;
         this.nombreUsuario = nombreUsuario;
+        this.email = email;
+    }
+
+    public Oferta() {
     }
 
     public String getNombre() {
@@ -39,5 +44,13 @@ public class Oferta {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -103,14 +103,14 @@ public class Ofertas extends Fragment {
 
     private void cargarDatos() {
         Oferta d1 = new Oferta("Comparto Coche", "Bajo a Madrid de Lunea a Viernes a las 7" +
-                " y vuelvo a las 5. Zona metro Begoña", "PEPe");
-        Oferta d2 = new Oferta("Comparto Taladro", "Talabro 600W", "PEPe");
-        Oferta d3 = new Oferta("Paseo Perro", "Puedo sacar tu perro a las 7 de la mañana...", "PEPe");
-        Oferta d4 = new Oferta("Impresora", "Hola, apenas uso la impresora y es una pena. Si necesitas imprimir algo, estoy disponible.", "PEPe");
-        Oferta d5 = new Oferta("Senderismo", "Me gusta pasear y hacer senderismo por la montaña. Suelo salir a la pedriza todos los Domingos.",  "PEPe");
-        Oferta d6 = new Oferta("Un buen café", "Hola, tengo la mayoria de las tardes libres y a veces pienso que es una pena no compartir una buena taza de café. ", "PEPe");
-        Oferta d7 = new Oferta("Busco canguro", "Hola soy Carolina, busco alguien de confianza en el barrio/urbanización que cuide de mi bebe.", "PEPe");
-        Oferta d8 = new Oferta("¿Alguien para cuidar mis peces?", "Soy la vecina del atico del portal 2, estoy buscando una persona que pueda echar de comer a mis peces en periodo vacacional", "PEPe");
+                " y vuelvo a las 5. Zona metro Begoña", "PEPe", "Email");
+        Oferta d2 = new Oferta("Comparto Taladro", "Talabro 600W", "PEPe", "Email");
+        Oferta d3 = new Oferta("Paseo Perro", "Puedo sacar tu perro a las 7 de la mañana...", "PEPe", "Email");
+        Oferta d4 = new Oferta("Impresora", "Hola, apenas uso la impresora y es una pena. Si necesitas imprimir algo, estoy disponible.", "PEPe", "Email");
+        Oferta d5 = new Oferta("Senderismo", "Me gusta pasear y hacer senderismo por la montaña. Suelo salir a la pedriza todos los Domingos.",  "PEPe", "Email");
+        Oferta d6 = new Oferta("Un buen café", "Hola, tengo la mayoria de las tardes libres y a veces pienso que es una pena no compartir una buena taza de café. ", "PEPe", "Email");
+        Oferta d7 = new Oferta("Busco canguro", "Hola soy Carolina, busco alguien de confianza en el barrio/urbanización que cuide de mi bebe.", "PEPe", "Email");
+        Oferta d8 = new Oferta("¿Alguien para cuidar mis peces?", "Soy la vecina del atico del portal 2, estoy buscando una persona que pueda echar de comer a mis peces en periodo vacacional", "PEPe", "Email");
 
 
         lista.add(d1);

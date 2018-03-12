@@ -6,11 +6,16 @@
     android:layout_height="wrap_content"
     tools:context="com.app.JuanCristobalJavier.applaescalera.Principal">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vpPrincipal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
@@ -26,13 +31,13 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <FrameLayout
-            android:id="@+id/frament"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
     </android.support.design.widget.AppBarLayout>
 
+
+    <FrameLayout
+        android:id="@+id/frament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/floatinMenu"

@@ -2,14 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp">
+    >
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:padding="15dp"        >
 
         <TextView
             android:id="@+id/txtNombreProducto"
@@ -17,8 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Nombre del Producto"
             android:textAlignment="center"
-            android:textSize="25dp"
-            android:layout_marginTop="120dp"/>
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/txtNombrePersona"
@@ -45,5 +44,12 @@
                     android:text="Descripción del producto" />
             </LinearLayout>
         </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dip"
+            android:layout_marginBottom="40dp"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="15dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
