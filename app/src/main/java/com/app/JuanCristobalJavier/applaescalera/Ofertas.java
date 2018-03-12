@@ -61,19 +61,7 @@ public class Ofertas extends Fragment {
 
         cargarDatos();
 
-        adapter = new AdaptadorOD(lista);
-        recyclerView.setAdapter(adapter);
-        //configurarRV();
-
-
         return  v;
-    }
-
-
-
-    private void invocarWS() {
-
-
     }
 
 
@@ -86,6 +74,8 @@ public class Ofertas extends Fragment {
                     o = dataSnapshot1.getValue(Oferta.class);
                     lista.add(o);
                 }
+                adapter = new AdaptadorOD(lista);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
