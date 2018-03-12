@@ -36,7 +36,7 @@ public class Ofertas extends Fragment {
 
     private RecyclerView recyclerView;
     private ArrayList <Oferta> lista;
-    private AdaptadorOD adaptador;
+    private AdaptadorOD adapter;
     private DatabaseReference dr;
     private FirebaseDatabase fr;
     private Oferta o;
@@ -53,7 +53,7 @@ public class Ofertas extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_ofertas, container, false);
-        lista = new ArrayList<Oferta>();
+        lista = new ArrayList<>();
         recyclerView = v.findViewById(R.id.rvOfertas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fr = FirebaseDatabase.getInstance();
@@ -61,7 +61,7 @@ public class Ofertas extends Fragment {
 
         cargarDatos();
 
-        AdaptadorOD adapter = new AdaptadorOD(lista);
+        adapter = new AdaptadorOD(lista);
         recyclerView.setAdapter(adapter);
         //configurarRV();
 
