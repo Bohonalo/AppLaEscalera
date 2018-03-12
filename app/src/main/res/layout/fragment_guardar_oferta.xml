@@ -22,13 +22,21 @@
         android:padding="@dimen/Resource15dp"
         android:layout_marginTop="50dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ofrezco:"
+            android:textSize="25dp"
+            android:gravity="center"/>
+
         <EditText
             android:id="@+id/edtNombreOferta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Nombre del producto"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_marginTop="25dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
