@@ -2,11 +2,11 @@ package com.app.JuanCristobalJavier.applaescalera;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -15,19 +15,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.app.JuanCristobalJavier.applaescalera.model.ChatActivity;
-import com.app.JuanCristobalJavier.applaescalera.model.MisCosas;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        ContenedorFragment.OnFragmentInteractionListener {
     private FirebaseAuth auth;
     private FloatingActionMenu actionMenu;
 
-    private TabLayout tabs;
-    private ViewPager vpPrincipal;
+   // private ViewPager vpPrincipal;
+
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+    private ViewPagerAdapter adapter;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -37,47 +41,32 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        cargarContenido(toolbar);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+        actionMenu.setVisibility(View.VISIBLE);
+
+    }
+
+    private void cargarContenido(Toolbar toolbar) {
         actionMenu = findViewById(R.id.floatinMenu);
         actionMenu.setClosedOnTouchOutside(true);
+        actionMenu.setVisibility(View.INVISIBLE);
 
         auth = FirebaseAuth.getInstance();
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
-        Intent intent = new Intent(this, MisCosasActivity.class);
-        startActivity(intent);
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //vpPrincipal = findViewById(R.id.vpPrincipal);
 
-        tabs = findViewById(R.id.tabs);
-        vpPrincipal = findViewById(R.id.vpPrincipal);
-
-        crearAdaptador();
-
-        tabs.setupWithViewPager(vpPrincipal);
-
-    }
-
-    private void crearAdaptador() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Ofertas(), "Ofertas");
-        adapter.addFragment(new Demandas(), "Demandas");
-        vpPrincipal.setAdapter(adapter);
-
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
     }
 
     @Override
@@ -118,16 +107,22 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if (id == R.id.nav_Principal) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+        }
         if (id == R.id.nav_escalera) {
             // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
             Intent intent = new Intent(this, MisCosasActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
+            actionMenu.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_terminos) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new TerminosFragment()).commit();
+            actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_ayuda) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new AyudaFragment()).commit();
+            actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_logout){
             signOut();
         } else if (id == R.id.nav_mensaje){
@@ -159,5 +154,20 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
                 }
             }
         };
+    }
+
+    public void guardarOferta(View view) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new GuardarOferta()).commit();
+        actionMenu.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    public void guardarDemanda(View view) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frament, new GuardarDemanda()).commit();
+        actionMenu.setVisibility(View.INVISIBLE);
     }
 }

@@ -1,29 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="15dp"
     tools:context="com.app.JuanCristobalJavier.applaescalera.AyudaFragment">
 
 
-    <ImageView
-        android:id="@+id/imagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
-        android:layout_marginBottom="112dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ayuda" />
-
-    <TextView
-        android:id="@+id/textView3"
+    <LinearLayout
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Selecciona tu comunidad.\nConsulta el muro y mira los servicios que ofrecen tus vecinos.\nSelecciona el que te interese y contacta con el vecino."
-        android:textSize="20dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtAyuda"
+            android:textSize="20dp" />
 
-
-
-
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ayuda" />
+    </LinearLayout>
+</FrameLayout>

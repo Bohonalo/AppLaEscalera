@@ -4,11 +4,10 @@
     android:layout_height="match_parent"
     tools:context=".Ofertas">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvOfertas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="ofertas"
-        android:layout_marginTop="120dp"/>
-
+        android:layout_marginTop="100dp"/>
 </FrameLayout>

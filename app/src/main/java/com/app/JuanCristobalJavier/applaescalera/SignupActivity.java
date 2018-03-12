@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,23 +14,30 @@ import android.widget.Toast;
 
 import com.app.JuanCristobalJavier.applaescalera.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
-    private Button btnSignIn, btnSignUp, btnResetPassword;
+    private EditText inputEmail, inputNombre, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
+    private Button btnSignIn, btnSignUp;
     private FirebaseAuth auth;
+    private FirebaseFirestore db;
     private DatabaseReference mDatabaseReference;
     private Usuario usuario;
-    //private static String email = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,23 +45,15 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         btnSignIn = findViewById(R.id.sign_in_button);
         btnSignUp = findViewById(R.id.sign_up_button);
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
-        btnResetPassword = findViewById(R.id.btn_reset_password);
-        //String nombre = email.substring(0, email.indexOf("@"));
+        inputNombre = findViewById(R.id.nombre);
 
-
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
-
-        btnResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignupActivity.this, ResetPasswordActivity.class));
-            }
-        });
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Usuarios");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,11 +65,9 @@ public class SignupActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String email = inputEmail.getText().toString().trim();
+                String nombre = inputNombre.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
-
-
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.
@@ -80,6 +78,11 @@ public class SignupActivity extends AppCompatActivity {
                 if(!validaEmail(email)){
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.
                             campoMailInvalido), Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(nombre)) {
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.campoNombreInvalido), Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -110,7 +113,10 @@ public class SignupActivity extends AppCompatActivity {
                                                     + task.isSuccessful(), Toast.LENGTH_LONG).show();
                                 } else {
                                     String email = inputEmail.getText().toString().trim();
-                                    usuario = new Usuario("pepe", email);
+                                    String nombre = inputNombre.getText().toString().trim();
+
+                                    usuario = new Usuario(nombre, email);
+                                    //introducirUsuarioCouldFirestore();
                                     mDatabaseReference.push().setValue(usuario);
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
                                     finish();
@@ -120,6 +126,31 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void introducirUsuarioCouldFirestore() {
+        String email = inputEmail.getText().toString().trim();
+        String nombre = inputNombre.getText().toString().trim();
+        // Create a new user with a first and last name
+        Map<String, Object> user = new HashMap<>();
+        user.put("Nombre", nombre);
+        user.put("Email", email);
+
+        // Add a new document with a generated ID
+        db.collection("Usuarios")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(SignupActivity.this,"DocumentSnapshot added with ID: " + documentReference.getId(), Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(SignupActivity.this,"Error adding document", Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     public static Boolean validaEmail (String email) {

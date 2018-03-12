@@ -3,6 +3,10 @@
 
     <string name="title_activity_principal">Principal</string>
 
+    <string name="title_tab0">Tab 0</string>
+    <string name="title_tab1">Tab 1</string>
+    <string name="title_tab2">Tab 2</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
 
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -140,4 +144,10 @@
     <string name="privacidad">PRIVACIDAD</string>
 
     <string name="textoPrivacidad">En La escalera garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales. La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta. La escalera reserva los derechos de cambiar o de modificar estos términos sin previo aviso.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="campoNombreInvalido">Introduce nombre</string>
+    <string name="txtAyuda">Selecciona tu comunidad.Consulta el muro y mira los servicios que ofrecen tus vecinos. Selecciona el que te interese y contacta con el vecino.</string>
 </resources>

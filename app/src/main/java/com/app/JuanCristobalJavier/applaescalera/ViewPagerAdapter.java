@@ -1,6 +1,8 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentController;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class ViewPagerAdapter extends FragmentStatePagerAdapter{
     private List<Fragment> list = new ArrayList<>();
     private List<String> titulos = new ArrayList<>();
+
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -38,4 +41,5 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
     public CharSequence getPageTitle(int position) {
         return titulos.get(position);
     }
+
 }

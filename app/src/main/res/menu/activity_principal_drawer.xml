@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/drawerEscalera" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_Principal"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Principal" />
         <item
             android:id="@+id/nav_mensaje"
             android:icon="@drawable/ic_menu_slideshow"

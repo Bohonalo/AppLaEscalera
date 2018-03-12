@@ -34,6 +34,15 @@
             android:rotation="90"
             tools:ignore="ContentDescription" />
 
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:hint="@string/hint_nombre"
+            android:imeOptions="actionUnspecified"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
 
         <EditText
             android:id="@+id/email"
@@ -43,8 +52,6 @@
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColor="@android:color/white" />
-
-
 
 
         <EditText
@@ -69,15 +76,7 @@
             android:text="@string/action_sign_in_short"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_reset_password"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@null"
-            android:text="@string/btn_forgot_password"
-            android:textAllCaps="false"
-            android:textColor="@color/colorAccent" />
+
 
         <!-- Link to Login Screen -->
 
@@ -90,7 +89,8 @@
             android:text="@string/btn_link_to_login"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:visibility="invisible"/>
     </LinearLayout>
 
     <ProgressBar
