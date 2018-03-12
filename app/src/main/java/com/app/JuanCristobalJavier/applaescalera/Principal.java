@@ -109,6 +109,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         if (id == R.id.nav_Principal) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
+            actionMenu.setVisibility(View.VISIBLE);
         }
         if (id == R.id.nav_escalera) {
             // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();

@@ -21,8 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +33,6 @@ public class SignupActivity extends AppCompatActivity {
     private EditText inputEmail, inputNombre, inputPassword;     //hit option + enter if you on mac , for windows hit ctrl + enter
     private Button btnSignIn, btnSignUp;
     private FirebaseAuth auth;
-    private FirebaseFirestore db;
     private DatabaseReference mDatabaseReference;
     private Usuario usuario;
 
@@ -45,7 +43,6 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
 
         btnSignIn = findViewById(R.id.sign_in_button);
         btnSignUp = findViewById(R.id.sign_up_button);
@@ -128,30 +125,7 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    private void introducirUsuarioCouldFirestore() {
-        String email = inputEmail.getText().toString().trim();
-        String nombre = inputNombre.getText().toString().trim();
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("Nombre", nombre);
-        user.put("Email", email);
 
-        // Add a new document with a generated ID
-        db.collection("Usuarios")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(SignupActivity.this,"DocumentSnapshot added with ID: " + documentReference.getId(), Toast.LENGTH_LONG).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(SignupActivity.this,"Error adding document", Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
 
     public static Boolean validaEmail (String email) {
         Pattern pattern = Pattern.compile("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$");
