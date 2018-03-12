@@ -58,8 +58,10 @@ public class Demandas extends Fragment {
     private void cargarDatos() {
         dr = fr.getReference("ObjetosDemanda");
         dr.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                lista.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     d = dataSnapshot1.getValue(Demanda.class);
                     lista.add(d);

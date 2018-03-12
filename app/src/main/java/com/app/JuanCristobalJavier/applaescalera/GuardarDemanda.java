@@ -28,7 +28,7 @@ public class GuardarDemanda extends Fragment {
 
     private EditText nombre;
     private EditText descrip;
-    private Button btnGuardar;
+    private Button btnGuardar, btnAtras;
     private Usuario u;
     private String email;
     private FirebaseDatabase fr;
@@ -52,6 +52,7 @@ public class GuardarDemanda extends Fragment {
         nombre = v.findViewById(R.id.edtNombreDemanda);
         descrip = v.findViewById(R.id.edtDescripDemanda);
         btnGuardar = v.findViewById(R.id.btnGuardarDemanda);
+        btnAtras = v.findViewById(R.id.btnAtrasD);
         u = new Usuario();
 
         email = obterEmail();
@@ -63,6 +64,19 @@ public class GuardarDemanda extends Fragment {
             public void onClick(View v) {
 
                 guardarObjetoRealtime(email, nombreU);
+            }
+        });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContenedorFragment nuevoFragmento = new ContenedorFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.frament, nuevoFragmento);
+                transaction.addToBackStack(null);
+
+                // Commit a la transacción
+                transaction.commit();
             }
         });
 

@@ -70,6 +70,7 @@ public class Ofertas extends Fragment {
         dr.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                lista.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     o = dataSnapshot1.getValue(Oferta.class);
                     lista.add(o);
