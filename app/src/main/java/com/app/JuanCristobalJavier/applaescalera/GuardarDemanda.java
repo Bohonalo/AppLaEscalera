@@ -35,6 +35,7 @@ public class GuardarDemanda extends Fragment {
     private FirebaseDatabase fr;
     private String nombreU;
     private DatabaseReference dr;
+    private String emailItem;
 
 
     public GuardarDemanda() {
@@ -54,6 +55,7 @@ public class GuardarDemanda extends Fragment {
         descrip = v.findViewById(R.id.edtDescripDemanda);
         btnGuardar = v.findViewById(R.id.btnGuardarDemanda);
         btnAtras = v.findViewById(R.id.btnAtrasD);
+
         u = new Usuario();
 
         email = obterEmail();

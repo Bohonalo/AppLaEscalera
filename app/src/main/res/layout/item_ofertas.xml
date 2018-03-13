@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#C2B7FF"
+        android:background="@color/white"
         android:layout_margin="25dp">
 
         <TextView
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre del Producto"
-            android:textAlignment="center"
+            android:layout_marginLeft="@dimen/Resource15dp"
             android:textSize="25dp" />
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_marginTop="15dp"
             android:text="Nombre Persona"
             android:textSize="18dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="15dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,10 +51,18 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="4dip"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/colorAccent"
-            android:layout_margin="20dp"
             android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idCorreoItem"
+            android:text="contacto"
+            android:layout_marginLeft="@dimen/Resource15dp"
+            android:layout_marginBottom="10dp"
+      />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

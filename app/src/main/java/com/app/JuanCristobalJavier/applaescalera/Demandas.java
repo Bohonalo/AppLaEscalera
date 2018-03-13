@@ -1,6 +1,8 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,8 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import com.app.JuanCristobalJavier.applaescalera.model.Demanda;
 import com.app.JuanCristobalJavier.applaescalera.recyclerViewUtils.AdaptadorDemandas;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +37,10 @@ public class Demandas extends Fragment {
     private FirebaseDatabase fr;
     private Demanda d;
 
+    private TextView emailItem;
+    private String correo;
+
+
     public Demandas() {
         // Required empty public constructor
     }
@@ -48,11 +58,33 @@ public class Demandas extends Fragment {
         recyclerView = v.findViewById(R.id.rvDemandas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fr = FirebaseDatabase.getInstance();
+        emailItem = v.findViewById(R.id.idCorreoItem);
+        correo = obterEmail();
         d = new Demanda();
 
         cargarDatos();
 
+
         return  v;
+    }
+
+
+
+    /*public void enviarCorreo(View v){
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",
+                correo, null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Android APP - ");
+        startActivity(emailIntent);
+    }*/
+
+
+    private String obterEmail() {
+        String email = "";
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            email = user.getEmail();
+        }
+        return email;
     }
 
 
@@ -76,6 +108,16 @@ public class Demandas extends Fragment {
 
                 adapter = new AdaptadorDemandas(newList);
                 recyclerView.setAdapter(adapter);
+
+
+                adapter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Demanda de = newList.get(recyclerView.getChildAdapterPosition(v));
+                        Intent i = new Intent(Intent.ACTION_SEND); i.setType("text/plain");
+                        i.putExtra(Intent.EXTRA_EMAIL , de.getEmail());
+                    }
+                });
             }
 
             @Override

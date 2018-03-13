@@ -36,6 +36,7 @@ public class AdaptadorDemandas extends RecyclerView.Adapter <AdaptadorDemandas.V
         holder.nombrePersona.setText(lista.get(position).getNombreUsuario());
         holder.nombreProducto.setText(lista.get(position).getNombre());
         holder.descripcion.setText(lista.get(position).getDes());
+        holder.emailItem.setText(lista.get(position).getEmail());
     }
 
     @Override
@@ -50,10 +51,16 @@ public class AdaptadorDemandas extends RecyclerView.Adapter <AdaptadorDemandas.V
         }
     }
 
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
     public class VhDemandas extends RecyclerView.ViewHolder {
         private TextView nombreProducto;
         private TextView descripcion;
         private TextView nombrePersona;
+        private TextView emailItem;
 
         public VhDemandas(View itemView) {
 
@@ -61,6 +68,7 @@ public class AdaptadorDemandas extends RecyclerView.Adapter <AdaptadorDemandas.V
             nombreProducto =  itemView.findViewById(R.id.txtNombreProductoD);
             descripcion = itemView.findViewById(R.id.txtDescripD);
             nombrePersona = itemView.findViewById(R.id.txtNombrePersonaD);
+            emailItem = itemView.findViewById(R.id.idCorreoItem);
         }
 
         public TextView getNombreProducto() {
@@ -75,5 +83,14 @@ public class AdaptadorDemandas extends RecyclerView.Adapter <AdaptadorDemandas.V
             return nombrePersona;
         }
 
+        public TextView getEmailItem() {
+            return emailItem;
+        }
+
+        public void setEmailItem(TextView emailItem) {
+            this.emailItem = emailItem;
+        }
     }
+
+
 }

@@ -2,6 +2,7 @@ package com.app.JuanCristobalJavier.applaescalera;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.app.JuanCristobalJavier.applaescalera.model.Oferta;
 import com.app.JuanCristobalJavier.applaescalera.model.Usuario;
@@ -36,6 +38,7 @@ public class GuardarOferta extends Fragment {
     private String nombreU;
     private DatabaseReference dr;
 
+
     public GuardarOferta() {
         // Required empty public constructor
     }
@@ -52,6 +55,7 @@ public class GuardarOferta extends Fragment {
         descrip = v.findViewById(R.id.edtDescripOferta);
         btnGuardar = v.findViewById(R.id.btnGuardarOferta);
         btnAtras = v.findViewById(R.id.btnAtrasO);
+
         u = new Usuario();
 
         email = obterEmail();
@@ -121,4 +125,6 @@ public class GuardarOferta extends Fragment {
         Intent i = new Intent(getActivity(), Principal.class);
         getActivity().startActivity(i);
     }
+
+
 }
