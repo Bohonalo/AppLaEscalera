@@ -2,22 +2,16 @@ package com.app.JuanCristobalJavier.applaescalera;
 
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.app.JuanCristobalJavier.applaescalera.model.Oferta;
-import com.app.JuanCristobalJavier.applaescalera.model.Usuario;
 import com.app.JuanCristobalJavier.applaescalera.recyclerViewUtils.AdaptadorOD;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +29,7 @@ import java.util.ArrayList;
 public class Ofertas extends Fragment {
 
     private RecyclerView recyclerView;
-    private ArrayList <Oferta> lista;
+    private ArrayList <Oferta> lista, newList;
     private AdaptadorOD adapter;
     private DatabaseReference dr;
     private FirebaseDatabase fr;
@@ -54,6 +48,7 @@ public class Ofertas extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_ofertas, container, false);
         lista = new ArrayList<>();
+        newList = new ArrayList<>();
         recyclerView = v.findViewById(R.id.rvOfertas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fr = FirebaseDatabase.getInstance();
@@ -71,11 +66,19 @@ public class Ofertas extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 lista.clear();
+                newList.clear();
+
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     o = dataSnapshot1.getValue(Oferta.class);
                     lista.add(o);
                 }
-                adapter = new AdaptadorOD(lista);
+                int size = lista.size()-1;
+
+                for(int i=size;i>=0;i--){
+                    newList.add(lista.get(i));
+                }
+
+                adapter = new AdaptadorOD(newList);
                 recyclerView.setAdapter(adapter);
             }
 

@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class Demandas extends Fragment {
 
     private RecyclerView recyclerView;
-    private ArrayList <Demanda> lista;
+    private ArrayList <Demanda> lista, newList;
     private AdaptadorDemandas adapter;
     private DatabaseReference dr;
     private FirebaseDatabase fr;
@@ -44,6 +44,7 @@ public class Demandas extends Fragment {
 
 
         lista = new ArrayList<>();
+        newList = new ArrayList<>();
         recyclerView = v.findViewById(R.id.rvDemandas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fr = FirebaseDatabase.getInstance();
@@ -62,11 +63,18 @@ public class Demandas extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 lista.clear();
+                newList.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     d = dataSnapshot1.getValue(Demanda.class);
                     lista.add(d);
                 }
-                adapter = new AdaptadorDemandas(lista);
+                int size = lista.size()-1;
+
+                for(int i=size;i>=0;i--){
+                    newList.add(lista.get(i));
+                }
+
+                adapter = new AdaptadorDemandas(newList);
                 recyclerView.setAdapter(adapter);
             }
 
