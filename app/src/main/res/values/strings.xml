@@ -7,6 +7,8 @@
     <string name="title_tab1">Tab 1</string>
     <string name="title_tab2">Tab 2</string>
 
+    <string name="campoNombreApellidos">Introduce nombre completo\nEjemplo: Juan Sanchez</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
 
     <string name="navigation_drawer_close">Close navigation drawer</string>

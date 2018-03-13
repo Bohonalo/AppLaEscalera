@@ -1,6 +1,7 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,12 +71,7 @@ public class Demandas extends Fragment {
 
 
 
-    /*public void enviarCorreo(View v){
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",
-                correo, null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Android APP - ");
-        startActivity(emailIntent);
-    }*/
+
 
 
     private String obterEmail() {
@@ -114,8 +110,7 @@ public class Demandas extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Demanda de = newList.get(recyclerView.getChildAdapterPosition(v));
-                        Intent i = new Intent(Intent.ACTION_SEND); i.setType("text/plain");
-                        i.putExtra(Intent.EXTRA_EMAIL , de.getEmail());
+                        sendEmail(de.getEmail());
                     }
                 });
             }
@@ -126,6 +121,13 @@ public class Demandas extends Fragment {
             }
         });
 
+    }
+
+    public static void sendEmail(String Address){
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{Address});
+        //activity.startActivity(Intent.createChooser(emailIntent, "Enviar mail"));
     }
 
 }

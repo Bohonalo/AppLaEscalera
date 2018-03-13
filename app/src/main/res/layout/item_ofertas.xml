@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp">
@@ -8,26 +9,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="25dp"
         android:background="@color/white"
-        android:layout_margin="25dp">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="25dp">
 
         <TextView
             android:id="@+id/txtNombreProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre del Producto"
             android:layout_marginLeft="@dimen/Resource15dp"
+            android:text="Nombre del Producto"
             android:textSize="25dp" />
 
         <TextView
             android:id="@+id/txtNombrePersona"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="115dp"
             android:layout_marginTop="15dp"
+            android:capitalize="characters"
+            android:gravity="right"
             android:text="Nombre Persona"
             android:textSize="18dp"
-            android:layout_marginLeft="15dp"/>
+            android:typeface="serif" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -52,17 +57,34 @@
             android:layout_width="match_parent"
             android:layout_height="4dip"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorAccent"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:background="@color/colorAccent" />
 
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/idCorreoItem"
-            android:text="contacto"
-            android:layout_marginLeft="@dimen/Resource15dp"
-            android:layout_marginBottom="10dp"
-      />
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/idCorreoItem"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/Resource15dp"
+                android:text="contacto" />
+
+            <Button
+                android:id="@+id/idBTNeliminar"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorAccent"
+                android:text="eliminar"
+
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

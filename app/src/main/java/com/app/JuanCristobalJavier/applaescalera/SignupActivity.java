@@ -82,6 +82,10 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.campoNombreInvalido), Toast.LENGTH_LONG).show();
                     return;
                 }
+                if(nombre.length() < 10){
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.campoNombreApellidos), Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.

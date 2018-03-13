@@ -38,6 +38,10 @@ public class AdaptadorOD extends RecyclerView.Adapter <AdaptadorOD.VhOferta> imp
         holder.nombrePersona.setText(lista.get(position).getNombreUsuario());
         holder.nombreProducto.setText(lista.get(position).getNombre());
         holder.descripcion.setText(lista.get(position).getDes());
+        holder.email.setText("contacto: " + lista.get(position).getEmail());
+    }
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -57,6 +61,7 @@ public class AdaptadorOD extends RecyclerView.Adapter <AdaptadorOD.VhOferta> imp
         private TextView nombreProducto;
         private TextView descripcion;
         private TextView nombrePersona;
+        private TextView email;
 
         public VhOferta(View itemView) {
             super(itemView);
@@ -64,6 +69,7 @@ public class AdaptadorOD extends RecyclerView.Adapter <AdaptadorOD.VhOferta> imp
             nombreProducto =  itemView.findViewById(R.id.txtNombreProducto);
             descripcion = itemView.findViewById(R.id.txtDescrip);
             nombrePersona = itemView.findViewById(R.id.txtNombrePersona);
+            email = itemView.findViewById(R.id.idCorreoItem);
         }
 
         public TextView getNombreProducto() {

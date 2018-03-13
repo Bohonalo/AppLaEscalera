@@ -36,7 +36,7 @@ public class AdaptadorDemandas extends RecyclerView.Adapter <AdaptadorDemandas.V
         holder.nombrePersona.setText(lista.get(position).getNombreUsuario());
         holder.nombreProducto.setText(lista.get(position).getNombre());
         holder.descripcion.setText(lista.get(position).getDes());
-        holder.emailItem.setText(lista.get(position).getEmail());
+        holder.emailItem.setText("contacto: " +lista.get(position).getEmail());
     }
 
     @Override
