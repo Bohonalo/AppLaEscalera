@@ -1,6 +1,7 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -28,7 +29,7 @@ public class GuardarDemanda extends Fragment {
 
     private EditText nombre;
     private EditText descrip;
-    private Button btnGuardar;
+    private Button btnGuardar, btnAtras;
     private Usuario u;
     private String email;
     private FirebaseDatabase fr;
@@ -52,6 +53,7 @@ public class GuardarDemanda extends Fragment {
         nombre = v.findViewById(R.id.edtNombreDemanda);
         descrip = v.findViewById(R.id.edtDescripDemanda);
         btnGuardar = v.findViewById(R.id.btnGuardarDemanda);
+        btnAtras = v.findViewById(R.id.btnAtrasD);
         u = new Usuario();
 
         email = obterEmail();
@@ -63,6 +65,15 @@ public class GuardarDemanda extends Fragment {
             public void onClick(View v) {
 
                 guardarObjetoRealtime(email, nombreU);
+            }
+        });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Principal.class);
+                getActivity().startActivity(i);
+
             }
         });
 
@@ -109,12 +120,15 @@ public class GuardarDemanda extends Fragment {
         Oferta o = new Oferta(nombreP, descripO, nombrePer, emailP);
         dr.push().setValue(o);
 
-        ContenedorFragment nuevoFragmento = new ContenedorFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.frament, nuevoFragmento);
-        transaction.addToBackStack(null);
+        Intent i = new Intent(getActivity(), Principal.class);
+        getActivity().startActivity(i);
 
-        // Commit a la transacción
-        transaction.commit();
+//        ContenedorFragment nuevoFragmento = new ContenedorFragment();
+//        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frament, nuevoFragmento);
+//        transaction.addToBackStack(null);
+//
+//        // Commit a la transacción
+//        transaction.commit();
     }
 }

@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         ContenedorFragment.OnFragmentInteractionListener {
     private FirebaseAuth auth;
-    private FloatingActionMenu actionMenu;
+    public FloatingActionMenu actionMenu;
 
    // private ViewPager vpPrincipal;
 

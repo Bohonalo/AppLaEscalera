@@ -1,6 +1,7 @@
 package com.app.JuanCristobalJavier.applaescalera;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -28,7 +29,7 @@ public class GuardarOferta extends Fragment {
 
     private EditText nombre;
     private EditText descrip;
-    private Button btnGuardar;
+    private Button btnGuardar, btnAtras;
     private Usuario u;
     private String email;
     private FirebaseDatabase fr;
@@ -50,6 +51,7 @@ public class GuardarOferta extends Fragment {
         nombre = v.findViewById(R.id.edtNombreOferta);
         descrip = v.findViewById(R.id.edtDescripOferta);
         btnGuardar = v.findViewById(R.id.btnGuardarOferta);
+        btnAtras = v.findViewById(R.id.btnAtrasO);
         u = new Usuario();
 
         email = obterEmail();
@@ -61,6 +63,15 @@ public class GuardarOferta extends Fragment {
             public void onClick(View v) {
 
                 guardarObjetoRealtime(email, nombreU);
+            }
+        });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), Principal.class);
+                getActivity().startActivity(i);
+
             }
         });
 
@@ -107,12 +118,7 @@ public class GuardarOferta extends Fragment {
         Oferta o = new Oferta(nombreP, descripO, nombrePer, emailP);
         dr.push().setValue(o);
 
-        ContenedorFragment nuevoFragmento = new ContenedorFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.frament, nuevoFragmento);
-        transaction.addToBackStack(null);
-
-        // Commit a la transacción
-        transaction.commit();
+        Intent i = new Intent(getActivity(), Principal.class);
+        getActivity().startActivity(i);
     }
 }
