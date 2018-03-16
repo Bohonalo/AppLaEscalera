@@ -113,11 +113,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new ContenedorFragment()).commit();
             actionMenu.setVisibility(View.VISIBLE);
         }
-        if (id == R.id.nav_escalera) {
-            // getSupportFragmentManager().beginTransaction().replace(R.id.frament, new EscaleraFragment()).commit();
-            Intent intent = new Intent(this, MisCosasActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_cuenta) {
+         else if (id == R.id.nav_cuenta) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frament, new CuentaFragment()).commit();
             actionMenu.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_terminos) {
@@ -128,9 +124,6 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             actionMenu.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_logout){
             signOut();
-        } else if (id == R.id.nav_mensaje){
-            Intent intent = new Intent(this, ChatActivity.class);
-            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
